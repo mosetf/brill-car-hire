@@ -1,1 +1,1 @@
-Added feature A
+Fixed bug in feature A
