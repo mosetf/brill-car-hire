@@ -1,0 +1,17 @@
+created the admin.py
+added booking model
+created booking form to handle booking 
+to do :
+    create a dashboard where a user can:
+        1. view the car they have booked 
+        2. view the time they have before their time expires 
+        3. fine charged when they delay thier return
+    create a dashboard for the admin where:
+        1.they can clear customers when they retur the vehicle        
+
+not done :
+    config admin.py to the whole model
+    remove junk in view.py i.e func view_car() 
+
+to do :
+    fully impement the payment mode and its routes            

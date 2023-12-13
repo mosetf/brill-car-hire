@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Book Car{% endblock %}
+
+{% block content %}
+<style>
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #FF385C;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #484848;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #FF385C;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #FF5A5F;
+    }
+
+    span {
+        color: red;
+        font-size: 14px;
+    }
+</style>
+
+<div class="container">
+    <h2>Book a Car</h2>
+    <form action="{{ url_for('views.book_car', car_id=car_id) }}" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <label for="car_id">Select Car:</label>
+            {{ form.car_id(class="form-control") }}
+            {% if form.car_id.errors %}
+                {% for error in form.car_id.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="start_date">Start Date:</label>
+            {{ form.start_date(class="form-control") }}
+            {% if form.start_date.errors %}
+                {% for error in form.start_date.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="end_date">End Date:</label>
+            {{ form.end_date(class="form-control") }}
+            {% if form.end_date.errors %}
+                {% for error in form.end_date.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.confirm_booking(class="btn btn-primary") }}
+        </div>        
+    </form>
+</div>
+{% endblock %}

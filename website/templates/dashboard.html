@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+<style>
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #FF385C;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #FF385C;
+        color: white;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table tr:hover {
+        background-color: #ddd;
+    }
+
+    p {
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <h2>User Dashboard</h2>
+    <a href="{{ url_for('views.edit_profile') }}" class="btn btn-primary">Edit Profile</a>
+    {% if bookings %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Car</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Time Remaining</th>
+                <th>Fine</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.car.name }}</td>
+                <td>{{ booking.start_date }}</td>
+                <td>{{ booking.end_date }}</td>
+                <td>{{ booking.time_remaining() }}</td>
+                <td>{{ booking.fine }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No bookings found.</p>
+    {% endif %}
+</div>
+{% endblock %}

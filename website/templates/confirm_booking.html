@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Confirm Booking{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Confirm Booking</h2>
+    <!-- Display car details -->
+    <p>Car Name: {{ car.name }}</p>
+    <p>Category: {{ car.category }}</p>
+    <p>Price: ${{ car_price }}</p>
+
+    <!-- Payment method form -->
+    <form action="{{ url_for('views.select_payment', booking_id=booking.id) }}" method="post">
+        <!-- Add hidden input to carry over the booking_id if needed -->
+        <input type="hidden" name="booking_id" value="{{ booking.id }}">
+
+        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+    </form>
+</div>
+{% endblock %}

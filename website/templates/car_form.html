@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Car Upload{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="{{ url_for('auth.add_car') }}" enctype="multipart/form-data">
+    <!-- ... other form fields ... -->
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+    </div>
+    <div>
+        <label for="engine">Engine:</label>
+        <input type="text" id="engine" name="engine" required>
+    </div>
+    <input type="file" name="car_image" accept="image/*" required>
+    <button type="submit">Add Car</button>
+</form>
+{% endblock %}
