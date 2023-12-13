@@ -3,33 +3,35 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<div class="container">
-    <form method="POST">
-      <h3 align="center">Login</h3>
+<div class="container" style="max-width: 330px; padding: 15px; margin: 0 auto;">
+    <form method="POST" style="margin-bottom: 15px;">
+      <h3 style="margin-bottom: 15px; text-align: center;">Login</h3>
       <div class="form-group">
-        <label for="email">Email Address</label>
+        <label for="email" style="display: none;">Email Address</label>
         <input
           type="email"
           class="form-control"
           id="email"
           name="email"
           placeholder="Enter email"
+          style="margin-bottom: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ccc;"
         />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password" style="display: none;">Password</label>
         <input
           type="password"
           class="form-control"
           id="password"
           name="password"
           placeholder="Enter password"
+          style="margin-bottom: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ccc;"
         />
       </div>
-      <br />
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; border-radius: 5px; border: none; color: white; background-color: #007bff;">Login</button>
     </form>
 
-    <p>Don't have an account? <a href="{{ url_for('auth.sign_up') }}">Sign Up</a></p>
+    <p style="text-align: center;">Don't have an account? <a href="{{ url_for('auth.sign_up') }}" style="color: #007bff;">Sign Up</a></p>
 </div>
 {% endblock %}
+
