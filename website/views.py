@@ -14,7 +14,7 @@ views = Blueprint('views', __name__)
 def home():
     # Import Car model from the current package
     from .models import Car
-
+    
     # Fetch all car records from the database
     cars = Car.query.all() 
     return render_template("home.html", user=current_user, cars=cars)
