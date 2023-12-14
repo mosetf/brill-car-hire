@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 
 
 db = SQLAlchemy()
-DB_NAME = "trial.db"
+DB_NAME = "trial.sql"
 
 
 
