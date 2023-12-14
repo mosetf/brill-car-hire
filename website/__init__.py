@@ -20,7 +20,6 @@ def create_app():
     db.init_app(app)
 
     migrate = Migrate(app, db)
-
     from .views import views
     from .auth import auth
 
