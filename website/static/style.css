@@ -155,6 +155,13 @@
   letter-spacing: -0.31px;
   line-height: 42.3px;
   white-space: nowrap;
+  cursor: pointer; /* Add cursor style for better user experience */
+  text-align: center; /* Center the text within the button */
+  transition: background-color 0.3s ease; 
+}
+
+.desktop .text-wrapper-4:hover {
+  background-color: #ff0000; /* Change background color on hover */
 }
 
 .desktop .rectangle-2 {
@@ -172,7 +179,6 @@
   width: 635px;
   top: 186px;
   left: 378px;
-  -webkit-text-stroke: 4px #000000;
   font-family: "Mali", Helvetica;
   font-weight: 400;
   color: #000000;
