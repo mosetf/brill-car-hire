@@ -1,4 +1,3 @@
-# Import necessary modules from flask
 from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_required, current_user
 
@@ -8,16 +7,24 @@ from .models import Booking, db
 # Define a Blueprint for views
 views = Blueprint('views', __name__)
 
+
 # Define the route for the home page
 @views.route('/', methods=['GET', 'POST'])
-@login_required  # Ensure the user is logged in
 def home():
-    # Import Car model from the current package
-    from .models import Car
+    import os
+
+    image_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'images')
+    images = [f for f in os.listdir(image_folder) if f.endswith(('.jpg', '.png', '.jpeg', '.gif'))]
+
+    if current_user.is_authenticated:
+        from .models import Car
+
+        cars = Car.query.all() 
+        return render_template("home.html", user=current_user, cars=cars)
+        
+    return render_template('landing_page.html', images=images) 
+
     
-    # Fetch all car records from the database
-    cars = Car.query.all() 
-    return render_template("home.html", user=current_user, cars=cars)
 
 # Define the route for booking a car
 @views.route('/book_car/<int:car_id>', methods=['GET', 'POST'])
