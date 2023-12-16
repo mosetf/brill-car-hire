@@ -22,7 +22,7 @@ def home():
         cars = Car.query.all() 
         return render_template("home.html", user=current_user, cars=cars)
         
-    return render_template('landing_page.html', images=images) 
+    return render_template('index.html', images=images) 
 
     
 
