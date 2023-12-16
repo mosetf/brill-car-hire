@@ -127,14 +127,15 @@ def edit_profile():
         current_user.name = form.name.data
         current_user.email = form.email.data
         if form.password.data:
-            current_user.set_password(form.password.data)
+            pass
+           # current_user.set_password(form.password.data)
 
         db.session.commit()
         flash('Profile updated successfully', 'success')
         return redirect(url_for('views.dashboard'))
 
     # Pre-fill the form with current user information
-    form.name.data = current_user.name
+    form.name.data = current_user.na_me
     form.email.data = current_user.email
 
     return render_template('edit_profile.html', form=form)
