@@ -6,6 +6,7 @@ from flask_login import logout_user, login_user,login_required,current_user
 from sqlalchemy import or_
 
 auth = Blueprint('auth', __name__)
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     """Define login."""
@@ -62,12 +63,10 @@ def sign_up():
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
-        #user = User.query.filter_by(or_(phone==phone, email==email)).first()
         user = User.query.filter_by(email=email).first()
         if user:
             flash('Email already exists.', category='error')
         elif phone is None or  len(str(phone).strip()) != 10:
-            #rint(phone, type(phone), len(str(phone).strip()))
             flash('Phone number must be exactly 10 digits', category='error')
         elif len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
