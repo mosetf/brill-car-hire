@@ -6,13 +6,12 @@ class BookingForm(FlaskForm):
     """
     Form for booking a car.
     """
-    
     car_id = SelectField('Select Car', coerce=int, validators=[DataRequired()])
     start_date = DateField('Start Date', format='%Y-%m-%d', validators=[DataRequired()])
     end_date = DateField('End Date', format='%Y-%m-%d', validators=[DataRequired()])
     confirm_booking = SubmitField('Confirm Booking')
-
     
+    from .models import Car  
     def __init__(self, *args, **kwargs):
         super(BookingForm, self).__init__(*args, **kwargs)
         # Populate the car_id choices with car ids and names
