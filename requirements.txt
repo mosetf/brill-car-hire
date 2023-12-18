@@ -1,5 +1,6 @@
 python 3.11
-flask
-flask_login
-loggins
-os
+modules:
+    flask
+    flask_login
+    loggins
+    os
