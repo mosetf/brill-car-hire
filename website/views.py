@@ -37,7 +37,7 @@ def book_car(car_id):
 
     # Initialize the booking form
     form = BookingForm()
-    form.car_id.choices = [(car.id, car.model) for car in Car.query.all()]
+    form.car_id.choices = [(car.id, car.name) for car in Car.query.all()]
 
     # Validate the form submission
     if form.validate_on_submit():
