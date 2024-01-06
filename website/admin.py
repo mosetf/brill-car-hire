@@ -11,4 +11,3 @@ class CarPriceAdminView(ModelView):
     def is_accessible(self):
         # Access is granted only if the user is authenticated and is an admin
         return current_user.is_authenticated and current_user.is_admin
-
