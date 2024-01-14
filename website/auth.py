@@ -1,3 +1,4 @@
+from werkzeug.utils import secure_filename
 from flask import Blueprint, render_template,request,flash,redirect,url_for
 from .models import User, Car
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -90,7 +91,6 @@ def sign_up():
     return render_template("sign_up.html", user=current_user)
 
 
-from werkzeug.utils import secure_filename
 import os
 
 
