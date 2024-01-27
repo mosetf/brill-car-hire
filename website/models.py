@@ -25,6 +25,10 @@ class Car(db.Model, UserMixin):
     prices = db.relationship('CarPrice', backref='car', lazy=True)
 
 class Booking(db.Model, UserMixin):
+    """
+    Represents a booking made by a user for a car.
+    """
+
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     car_id = db.Column(db.Integer, db.ForeignKey('car.id'), nullable=False)
@@ -34,6 +38,12 @@ class Booking(db.Model, UserMixin):
     total_price = db.Column(db.Float, nullable=False, default=0.0)
 
     def time_remaining(self):
+        """
+        Calculates the remaining time for the booking.
+
+        Returns:
+            str: A string representation of the remaining time in the format "X days, X hours, X minutes, X seconds".
+        """
         now = datetime.utcnow()
         remaining_time = max(self.end_date - now, timedelta(0))
         
@@ -62,6 +72,12 @@ class Booking(db.Model, UserMixin):
         return time_remaining_str
 
     def calculate_fine(self):
+        """
+        Calculates the fine for the booking if it has ended.
+
+        Returns:
+            float: The fine amount in dollars.
+        """
         now = datetime.utcnow()
         time_elapsed = now - self.end_date
         if time_elapsed > timedelta(0):  # Fine only applies if the booking has ended
