@@ -1,262 +1,110 @@
-.desktop {
-  background-color: #000000;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 
-.desktop .overlap-wrapper {
-  background-color: #000000;
-  width: 80%; /* Adjusted width for responsiveness */
-  max-width: 1572px; /* Added maximum width for larger screens */
-  height: 60vw; /* Adjusted height for responsiveness */
-  max-height: 1037px; /* Added maximum height for larger screens */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.desktop .overlap {
+nav a.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.hero {
   position: relative;
-  height: 992px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
 }
 
-.desktop .overlap-group {
+.hero-video {
   position: absolute;
-  width: 1375px;
-  height: 992px;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.desktop .div {
-  position: absolute;
-  width: 813px;
-  height: 455px;
-  top: 0;
-  left: 72px;
+.hero-content {
+  max-width: 600px;
+  z-index: 1;
 }
 
-.desktop .vector {
-  position: absolute;
-  width: 429px;
-  height: 430px;
-  top: 0;
-  left: 349px;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-.desktop .text-wrapper {
-  position: absolute;
-  width: 182px;
-  top: 411px;
-  left: 630px;
-  font-family: "Kadwa", Helvetica;
-  font-weight: 400;
-  color: #ff385c;
-  font-size: 32px;
-  letter-spacing: -0.35px;
-  line-height: 48px;
-  white-space: nowrap;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-.desktop .rectangle {
-  position: absolute;
-  width: 335px;
-  height: 374px;
-  top: 65px;
-  left: 0;
-  border-radius: 47px;
-  border: 5px solid;
-  border-color: #000000;
-  box-shadow: 0px 4px 4px #00000040;
+.hero .btn-primary,
+.hero .btn-secondary {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 1rem;
+  display: inline-block;
 }
 
-.desktop .text-wrapper-2 {
-  position: absolute;
-  width: 333px;
-  top: 91px;
-  left: 24px;
-  font-family: "Mali", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 32px;
-  letter-spacing: 2.88px;
-  line-height: 48px;
+.hero .btn-primary {
+  background: #007bff;
+  color: #fff;
 }
 
-.desktop .overlap-2 {
-  position: absolute;
-  width: 1036px;
-  height: 508px;
-  top: 483px;
-  left: 0;
+.hero .btn-secondary {
+  background: #6c757d;
+  color: #fff;
 }
 
-.desktop .img {
-  position: absolute;
-  width: 479px;
-  height: 508px;
-  top: 0;
-  left: 0;
+.about,
+.services {
+  padding: 2rem;
+  background: #fff;
+  text-align: center;
 }
 
-.desktop .group {
-  position: absolute;
-  width: 586px;
-  height: 58px;
-  top: 384px;
-  left: 450px;
-}
-
-.desktop .overlap-group-2 {
-  position: relative;
-  width: 585px;
-  height: 60px;
-  top: -1px;
-}
-
-.desktop .text-wrapper-3 {
-  position: absolute;
-  width: 171px;
-  top: 9px;
-  left: 390px;
-  font-family: "Inter", Helvetica;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 28.2px;
-  letter-spacing: -0.31px;
-  line-height: 42.3px;
-  white-space: nowrap;
-}
-
-.desktop .vector-2 {
-  position: absolute;
-  width: 292px;
-  height: 58px;
-  top: 1px;
-  left: 0;
-}
-
-.desktop .vector-3 {
-  position: absolute;
-  width: 294px;
-  height: 60px;
-  top: 0;
-  left: 291px;
-}
-
-.desktop .text-wrapper-4 {
-  position: absolute;
-  width: 146px;
-  top: 394px;
-  left: 523px;
-  font-family: "Inter", Helvetica;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 28.2px;
-  letter-spacing: -0.31px;
-  line-height: 42.3px;
-  white-space: nowrap;
-  cursor: pointer; /* Add cursor style for better user experience */
-  text-align: center; /* Center the text within the button */
-  transition: background-color 0.3s ease; 
-}
-
-.desktop .text-wrapper-4:hover {
-  background-color: #ff0000; /* Change background color on hover */
-}
-
-.desktop .rectangle-2 {
-  position: absolute;
-  width: 649px;
-  height: 159px;
-  top: 175px;
-  left: 371px;
-  background-color: #d1baba;
-  border-radius: 12px;
-}
-
-.desktop .welcome-to-brill-car {
-  position: absolute;
-  width: 635px;
-  top: 186px;
-  left: 378px;
-  font-family: "Mali", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 1.44px;
-}
-
-.desktop .overlap-3 {
-  position: absolute;
-  width: 887px;
-  height: 311px;
-  top: 414px;
-  left: 488px;
-}
-
-.desktop .vector-4 {
-  position: absolute;
-  width: 346px;
-  height: 311px;
-  top: 0;
-  left: 541px;
-}
-
-.desktop .element-car-rent-service {
-  position: absolute;
-  width: 572px;
-  height: 178px;
-  top: 59px;
-  left: 0;
-  font-family: "Karma", Helvetica;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 64px;
-  line-height: 96px;
-}
-
-.desktop .span {
-  letter-spacing: -2.56px;
-}
-
-.desktop .text-wrapper-5 {
-  letter-spacing: -0.7px;
-}
-
-@media (max-width: 1200px) {
-  /* Adjust styles for screens up to 1200px wide */
-  .desktop .overlap-wrapper {
-    width: 90%;
-  }
-}
-
-@media (max-width: 992px) {
-  /* Adjust styles for screens up to 992px wide (typical desktop) */
-  .desktop .overlap-wrapper {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    max-height: none;
-  }
-  /* Adjust other styles as needed */
-}
-
-.desktop .vector-wrapper {
-  position: absolute;
-  width: 231px;
-  height: 65px;
-  top: 73px;
-  left: 1341px;
-  background-image: url(./img/vector-5.svg);
-  background-size: 100% 100%;
-}
-
-
-
-.desktop .vector-5 {
-  position: absolute;
-  width: 41px;
-  height: 41px;
-  top: 11px;
-  left: 14px;
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
 }
