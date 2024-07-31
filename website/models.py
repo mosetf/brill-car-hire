@@ -94,5 +94,4 @@ class CarPrice(db.Model, UserMixin):
     
 
     def __repr__(self):
-        return f"<CarPrice {self.id}>"            
-    
+        return f"<CarPrice {self.id}>" 
