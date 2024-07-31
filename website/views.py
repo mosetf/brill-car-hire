@@ -24,7 +24,6 @@ def home():
         
     return render_template('index.html', images=images) 
 
-    
 # Define the route for booking a car
 @views.route('/book_car/<int:car_id>', methods=['GET', 'POST'])
 @login_required  # Ensure the user is logged in
