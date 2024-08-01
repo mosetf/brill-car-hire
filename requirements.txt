@@ -4,3 +4,73 @@ modules:
     flask_login
     loggins
     os
+
+BRILL_CAR_HIRE/
+    app.py
+    instance/
+        config.sql
+    migrations/
+        versions/
+            // contains all versions of the database
+        alembic.ini
+        env.py
+        README
+        script.py.mako
+    website/
+        app.py
+        templates/
+            admin._sign_up.html
+            base.html
+            book_car.html
+            car_form.html
+            confirm_booking.html
+            dashboard.html
+            edit_profile.html
+            home.html
+            index.html
+            login.html
+            payment_selection.html
+            sign_up.html
+        static/
+            images/
+                // contains all images
+            videos/
+                // contains all videos
+            style.css
+            global.css
+        admin.py
+        __init__.py
+        models.py
+        auth.py
+        booking.py
+        views.py
+        forms.py
+
+client/
+    README.md
+    node_modules/
+    public/
+        index.html
+        images/
+            // contains all images
+        videos/
+            // contains all videos
+    src/
+        components/
+            PaymentSelection.js
+            SignUp.js
+            BaseLatyout.js
+            AdminSignUp.js
+            BookCar.js
+            CarForm.js
+            ConfirmBooking.js
+            UserDashboard.js
+            EditProfile.js
+            Home.js  // New file
+        styles/
+            App.css
+            global.css
+        App.js
+        index.js
+    package.json
+    .gitignore
