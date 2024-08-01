@@ -10,6 +10,11 @@ const Home = ({ cars }) => {
     }));
   };
 
+  // Ensure cars is an array before calling map
+  if (!cars || !Array.isArray(cars)) {
+    return <div>No cars available</div>;
+  }
+
   return (
     <div className="car-grid">
       <style>
@@ -95,7 +100,7 @@ const Home = ({ cars }) => {
       {cars.map((car) => (
         <div className="car-item" key={car.id}>
           <div className="car-name-overlay">{car.name}</div>
-          <img src={`/static/images/${car.image_url.split('\\').pop()}`} alt={car.name} />
+          <img src={`/images/${car.image_url.split('\\').pop()}`} alt={car.name} />
           <div className="car-info">
             <h3>{car.title}</h3>
             <p className="short-text">{car.description.slice(0, 100)}</p>
