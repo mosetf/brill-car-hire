@@ -11,7 +11,9 @@ import CarForm from './components/CarForm';
 import ConfirmBooking from './components/ConfirmBooking';
 import UserDashboard from './components/UserDashboard';
 import EditProfile from './components/EditProfile';
+import HomePage from './components/HomePage';
 import Home from './components/Home';
+import LoginPage from './components/LoginPage';
 
 function App() {
   const booking = { id: 1, total_price: 100 }; // Example booking data
@@ -20,16 +22,18 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/payment-selection" render={() => <PaymentSelection booking={booking} />} />
-          <Route path="/sign-up" component={SignUp} />
-          <Route path="/base-layout" component={BaseLayout} />
-          <Route path="/admin-sign-up" component={AdminSignUp} />
-          <Route path="/book-car" component={BookCar} />
-          <Route path="/car-form" component={CarForm} />
-          <Route path="/confirm-booking" component={ConfirmBooking} />
-          <Route path="/user-dashboard" component={UserDashboard} />
-          <Route path="/edit-profile" component={EditProfile} />
+          <Route path="/" element={<Home />} />
+          <Route path="/payment-selection" element={<PaymentSelection booking={booking} />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/base-layout" element={<BaseLayout />} />
+          <Route path="/admin-sign-up" element={<AdminSignUp />} />
+          <Route path="/book-car" element={<BookCar />} />
+          <Route path="/car-form" element={<CarForm />} />
+          <Route path="/confirm-booking" element={<ConfirmBooking />} />
+          <Route path="/user-dashboard" element={<UserDashboard />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </Router>
