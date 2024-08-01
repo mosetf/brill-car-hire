@@ -7,12 +7,6 @@ const BookCar = () => {
     end_date: '',
   });
 
-  const [errors, setErrors] = useState({
-    car_id: [],
-    start_date: [],
-    end_date: [],
-  });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -99,9 +93,6 @@ const BookCar = () => {
             onChange={handleChange}
             required
           />
-          {errors.car_id.map((error, index) => (
-            <span key={index}>{error}</span>
-          ))}
         </div>
         <div className="form-group">
           <label htmlFor="start_date">Start Date:</label>
@@ -114,9 +105,6 @@ const BookCar = () => {
             onChange={handleChange}
             required
           />
-          {errors.start_date.map((error, index) => (
-            <span key={index}>{error}</span>
-          ))}
         </div>
         <div className="form-group">
           <label htmlFor="end_date">End Date:</label>
@@ -129,9 +117,6 @@ const BookCar = () => {
             onChange={handleChange}
             required
           />
-          {errors.end_date.map((error, index) => (
-            <span key={index}>{error}</span>
-          ))}
         </div>
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
